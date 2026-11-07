@@ -1,0 +1,11 @@
+# Large data stays in Azure; never commit it
+*.zst
+*.pgn
+*.parquet
+.venv/
+__pycache__/
+# credentials
+*.pem
+*.key
+dsai3202_lab*
+.env

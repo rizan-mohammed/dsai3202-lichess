@@ -1,0 +1,11 @@
+{
+  "url": "https://database.lichess.org/standard/lichess_db_standard_rated_2017-05.pgn.zst",
+  "file": "lichess_db_standard_rated_2017-05.pgn.zst",
+  "bytes": 3585539491,
+  "sha256": "c4b2e39a382fb8a9dc5e766bbae0201d123c5c0ccc27f6e852d9a69e6661ab2f",
+  "month": "2017-05",
+  "ingestion_mode": "batch, manual",
+  "registered_at": "2026-11-01T19:31:44.585504Z",
+  "etag": "\"63657a0d-d5b6fda3\"",
+  "last_modified": "Fri, 04 Nov 2022 20:46:05 GMT"
+}

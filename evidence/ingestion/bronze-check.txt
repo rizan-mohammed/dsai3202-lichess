@@ -1,0 +1,6 @@
+manifest games_parsed: 11693919 | rows in parquet parts: 11693919
+MATCH
+azure files: 60 | local files: 60
+SIZES MATCH
+staged: 60 | raw bronze: 60
+STAGED MATCHES RAW

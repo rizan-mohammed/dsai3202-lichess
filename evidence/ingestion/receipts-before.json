@@ -1,0 +1,12 @@
+[
+  {
+    "bytes": 3585539491,
+    "etag": "0x8DF384ED47C2698",
+    "name": "lichess/standard_rated/2017-05/lichess_db_standard_rated_2017-05.pgn.zst"
+  },
+  {
+    "bytes": 448,
+    "etag": "0x8DF384ED620541C",
+    "name": "lichess/standard_rated/2017-05/source-manifest.json"
+  }
+]

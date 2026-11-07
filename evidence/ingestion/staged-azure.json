@@ -1,0 +1,246 @@
+[
+  {
+    "Bytes": 146,
+    "Path": "lichess/bronze_staged/month=2017-05/_bronze-manifest.json"
+  },
+  {
+    "Bytes": 448,
+    "Path": "lichess/bronze_staged/month=2017-05/_source-manifest.json"
+  },
+  {
+    "Bytes": 12698081,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00000.parquet"
+  },
+  {
+    "Bytes": 12835969,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00001.parquet"
+  },
+  {
+    "Bytes": 12591650,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00002.parquet"
+  },
+  {
+    "Bytes": 12637434,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00003.parquet"
+  },
+  {
+    "Bytes": 12699847,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00004.parquet"
+  },
+  {
+    "Bytes": 12661843,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00005.parquet"
+  },
+  {
+    "Bytes": 12617361,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00006.parquet"
+  },
+  {
+    "Bytes": 12679058,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00007.parquet"
+  },
+  {
+    "Bytes": 12692971,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00008.parquet"
+  },
+  {
+    "Bytes": 12584817,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00009.parquet"
+  },
+  {
+    "Bytes": 12652210,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00010.parquet"
+  },
+  {
+    "Bytes": 12526728,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00011.parquet"
+  },
+  {
+    "Bytes": 12588515,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00012.parquet"
+  },
+  {
+    "Bytes": 12625344,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00013.parquet"
+  },
+  {
+    "Bytes": 12594910,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00014.parquet"
+  },
+  {
+    "Bytes": 12569082,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00015.parquet"
+  },
+  {
+    "Bytes": 12554679,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00016.parquet"
+  },
+  {
+    "Bytes": 12512166,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00017.parquet"
+  },
+  {
+    "Bytes": 12653073,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00018.parquet"
+  },
+  {
+    "Bytes": 12677363,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00019.parquet"
+  },
+  {
+    "Bytes": 12553142,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00020.parquet"
+  },
+  {
+    "Bytes": 12650036,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00021.parquet"
+  },
+  {
+    "Bytes": 12645767,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00022.parquet"
+  },
+  {
+    "Bytes": 12726103,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00023.parquet"
+  },
+  {
+    "Bytes": 12777498,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00024.parquet"
+  },
+  {
+    "Bytes": 12645445,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00025.parquet"
+  },
+  {
+    "Bytes": 12564671,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00026.parquet"
+  },
+  {
+    "Bytes": 12585676,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00027.parquet"
+  },
+  {
+    "Bytes": 12538222,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00028.parquet"
+  },
+  {
+    "Bytes": 12622515,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00029.parquet"
+  },
+  {
+    "Bytes": 12675626,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00030.parquet"
+  },
+  {
+    "Bytes": 12565210,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00031.parquet"
+  },
+  {
+    "Bytes": 12580507,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00032.parquet"
+  },
+  {
+    "Bytes": 12523852,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00033.parquet"
+  },
+  {
+    "Bytes": 12644197,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00034.parquet"
+  },
+  {
+    "Bytes": 12401677,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00035.parquet"
+  },
+  {
+    "Bytes": 12465769,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00036.parquet"
+  },
+  {
+    "Bytes": 12550902,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00037.parquet"
+  },
+  {
+    "Bytes": 12614635,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00038.parquet"
+  },
+  {
+    "Bytes": 12727812,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00039.parquet"
+  },
+  {
+    "Bytes": 12490588,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00040.parquet"
+  },
+  {
+    "Bytes": 12482926,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00041.parquet"
+  },
+  {
+    "Bytes": 12626965,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00042.parquet"
+  },
+  {
+    "Bytes": 12610245,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00043.parquet"
+  },
+  {
+    "Bytes": 12566590,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00044.parquet"
+  },
+  {
+    "Bytes": 12584210,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00045.parquet"
+  },
+  {
+    "Bytes": 12605624,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00046.parquet"
+  },
+  {
+    "Bytes": 12576734,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00047.parquet"
+  },
+  {
+    "Bytes": 12580949,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00048.parquet"
+  },
+  {
+    "Bytes": 12621975,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00049.parquet"
+  },
+  {
+    "Bytes": 12522685,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00050.parquet"
+  },
+  {
+    "Bytes": 12525711,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00051.parquet"
+  },
+  {
+    "Bytes": 12538172,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00052.parquet"
+  },
+  {
+    "Bytes": 12553388,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00053.parquet"
+  },
+  {
+    "Bytes": 12487799,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00054.parquet"
+  },
+  {
+    "Bytes": 12490759,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00055.parquet"
+  },
+  {
+    "Bytes": 12673733,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00056.parquet"
+  },
+  {
+    "Bytes": 12558475,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00057.parquet"
+  },
+  {
+    "Bytes": 6049665,
+    "Path": "lichess/bronze_staged/month=2017-05/part-00058.parquet"
+  }
+]
