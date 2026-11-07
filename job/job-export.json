@@ -1,0 +1,111 @@
+{
+  "name": "dsai3202-lichess-60306369",
+  "email_notifications": {
+    "no_alert_for_skipped_runs": false
+  },
+  "webhook_notifications": {},
+  "timeout_seconds": 0,
+  "max_concurrent_runs": 1,
+  "tasks": [
+    {
+      "task_key": "silver",
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/60306369@udst.edu.qa/Phase1-Lichess/lichess_01_silver",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "1001-053054-6sl7z4e8",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    },
+    {
+      "task_key": "prepare",
+      "depends_on": [
+        {
+          "task_key": "silver"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/60306369@udst.edu.qa/Phase1-Lichess/lichess_02_prepare",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "1001-053054-6sl7z4e8",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    },
+    {
+      "task_key": "validate",
+      "depends_on": [
+        {
+          "task_key": "prepare"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/60306369@udst.edu.qa/Phase1-Lichess/lichess_03_validate",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "1001-053054-6sl7z4e8",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    },
+    {
+      "task_key": "publish",
+      "depends_on": [
+        {
+          "task_key": "validate"
+        }
+      ],
+      "run_if": "ALL_SUCCESS",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/60306369@udst.edu.qa/Phase1-Lichess/lichess_04_publish",
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "1001-053054-6sl7z4e8",
+      "timeout_seconds": 0,
+      "email_notifications": {},
+      "webhook_notifications": {},
+      "disabled": false
+    }
+  ],
+  "queue": {
+    "enabled": true
+  },
+  "parameters": [
+    {
+      "name": "lake",
+      "default": "amazonlake60306369"
+    },
+    {
+      "name": "catalog",
+      "default": "dsai3202_databricks"
+    },
+    {
+      "name": "schema",
+      "default": "s_60306369"
+    },
+    {
+      "name": "run_id",
+      "default": "{{job.run_id}}"
+    },
+    {
+      "name": "month",
+      "default": "2017-05"
+    },
+    {
+      "name": "test_bad_data",
+      "default": "false"
+    },
+    {
+      "name": "compare_to",
+      "default": ""
+    }
+  ]
+}
