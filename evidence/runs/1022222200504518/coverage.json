@@ -1,0 +1,139 @@
+{
+  "population": "all silver games and eligible gold games; no sample",
+  "results": [
+    {
+      "result": "0-1",
+      "before": 5432909,
+      "after": 5187163,
+      "retained_pct": 95.477
+    },
+    {
+      "result": "1-0",
+      "before": 5804805,
+      "after": 5502211,
+      "retained_pct": 94.787
+    },
+    {
+      "result": "1/2-1/2",
+      "before": 449978,
+      "after": 439735,
+      "retained_pct": 97.724
+    }
+  ],
+  "speed_classes": [
+    {
+      "speed_class": null,
+      "before": 36565,
+      "after": 0,
+      "retained_pct": 0.0
+    },
+    {
+      "speed_class": 0,
+      "before": 3321306,
+      "after": 3212374,
+      "retained_pct": 96.72
+    },
+    {
+      "speed_class": 1,
+      "before": 5524775,
+      "after": 5294001,
+      "retained_pct": 95.823
+    },
+    {
+      "speed_class": 2,
+      "before": 2600918,
+      "after": 2437078,
+      "retained_pct": 93.701
+    },
+    {
+      "speed_class": 3,
+      "before": 204128,
+      "after": 185656,
+      "retained_pct": 90.951
+    }
+  ],
+  "label_counts": [
+    {
+      "label": 0,
+      "count": 5502211
+    },
+    {
+      "label": 1,
+      "count": 439735
+    },
+    {
+      "label": 2,
+      "count": 5187163
+    }
+  ],
+  "white_win_share_by_speed_class": [
+    {
+      "speed_class": 0,
+      "games": 3212374,
+      "white_win_share": 0.4965838348834849,
+      "mean_elo": 1718.6493202534948
+    },
+    {
+      "speed_class": 1,
+      "games": 5294001,
+      "white_win_share": 0.4934213272721331,
+      "mean_elo": 1648.9193058331496
+    },
+    {
+      "speed_class": 2,
+      "games": 2437078,
+      "white_win_share": 0.4938114414064712,
+      "mean_elo": 1586.1064192446856
+    },
+    {
+      "speed_class": 3,
+      "games": 185656,
+      "white_win_share": 0.49213599345025205,
+      "mean_elo": 1490.1307391088897
+    }
+  ],
+  "elo_diff_quantiles_1_25_50_75_99": [
+    -1794.0,
+    -75.0,
+    0.0,
+    73.0,
+    1787.0
+  ],
+  "corr_elo_diff_white_win": 0.3079500003951847,
+  "share_unequal_start_clock": 0.029985509172387476,
+  "feature_null_counts": {
+    "game_id": 0,
+    "game_ts": 0,
+    "label": 0,
+    "white_elo": 0,
+    "black_elo": 0,
+    "elo_diff": 0,
+    "elo_mean": 0,
+    "tc_base": 0,
+    "tc_inc": 0,
+    "speed_class": 0,
+    "eco": 0,
+    "eco_family": 0,
+    "opening_family": 0,
+    "w_clk_1": 0,
+    "b_clk_1": 0,
+    "w_used_10": 0,
+    "b_used_10": 0,
+    "used_diff_10": 0,
+    "unequal_start": 0
+  },
+  "funnel": {
+    "bronze_rows": 11693919,
+    "silver_rows": 11687692,
+    "quarantined_ineligible": 558583,
+    "gold_rows": 11129109,
+    "silver_dropped_by_step": {
+      "invalid_game_id": 0,
+      "invalid_result": 6227,
+      "invalid_elo": 0,
+      "invalid_timestamp": 0,
+      "invalid_time_control": 0,
+      "duplicate": 0
+    }
+  }
+}

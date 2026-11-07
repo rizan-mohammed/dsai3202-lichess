@@ -1,0 +1,109 @@
+{
+  "passed": false,
+  "failed_rules": [
+    "result"
+  ],
+  "rules": [
+    {
+      "rule": "schema",
+      "policy": "fail",
+      "passed": true,
+      "detail": "silver column types match"
+    },
+    {
+      "rule": "volume",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "actual": 11687692,
+        "expected": 11687692
+      }
+    },
+    {
+      "rule": "keys",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "invalid_rows": 0
+      }
+    },
+    {
+      "rule": "result",
+      "policy": "fail",
+      "passed": false,
+      "detail": {
+        "invalid_rows": 1
+      }
+    },
+    {
+      "rule": "elo_range",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "invalid_rows": 0
+      }
+    },
+    {
+      "rule": "timestamp",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "invalid_rows": 0
+      }
+    },
+    {
+      "rule": "time_control",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "invalid_rows": 0
+      }
+    },
+    {
+      "rule": "plies_arrays",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "invalid_rows": 0
+      }
+    },
+    {
+      "rule": "unique_game",
+      "policy": "fail",
+      "passed": true,
+      "detail": {
+        "duplicate_ids": 0
+      }
+    },
+    {
+      "rule": "eligibility",
+      "policy": "quarantine",
+      "passed": true,
+      "detail": {
+        "quarantined_rows": 558583,
+        "fraction": 0.04779241273640681,
+        "tolerance": 0.15,
+        "by_reason": {
+          "too_short": 492297,
+          "outside_month": 29810,
+          "untimed_game": 36476
+        }
+      }
+    },
+    {
+      "rule": "clock_gap",
+      "policy": "warn",
+      "passed": true,
+      "detail": {
+        "incomplete_clocks": 0,
+        "fraction": 0.0
+      }
+    }
+  ],
+  "rows_in": 11687692,
+  "quarantined_rows": 558583,
+  "accepted_rows": 11129109,
+  "eligibility_tolerance": 0.15,
+  "run_id": "1040472147064037",
+  "quarantine_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/lichess_runs/1040472147064037/quarantine"
+}

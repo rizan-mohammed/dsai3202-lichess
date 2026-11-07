@@ -1,0 +1,223 @@
+{
+  "rows": 11687692,
+  "population": "all input games; no sample",
+  "null_counts": {
+    "game_id": 0,
+    "event": 0,
+    "result": 0,
+    "utc_date": 0,
+    "game_ts": 0,
+    "white_elo": 0,
+    "black_elo": 0,
+    "white_diff": 4860,
+    "black_diff": 4860,
+    "eco": 0,
+    "opening": 0,
+    "time_control": 0,
+    "tc_base": 36565,
+    "tc_inc": 36565,
+    "termination": 0,
+    "n_plies": 0
+  },
+  "first_game": "2017-04-30 22:00:00",
+  "last_game": "2017-05-31 21:59:59",
+  "min_white_elo": 712,
+  "max_white_elo": 3139,
+  "mean_white_elo": 1646.5833846408684,
+  "mean_black_elo": 1645.941385347937,
+  "n_plies": {
+    "q25_q50_q75_q95": [
+      46.0,
+      64.0,
+      86.0,
+      124.0
+    ],
+    "quantile_rank_error": 0.01
+  },
+  "results": [
+    {
+      "result": "0-1",
+      "count": 5432909
+    },
+    {
+      "result": "1-0",
+      "count": 5804805
+    },
+    {
+      "result": "1/2-1/2",
+      "count": 449978
+    }
+  ],
+  "time_controls_top10": [
+    {
+      "time_control": "300+0",
+      "count": 2248059
+    },
+    {
+      "time_control": "180+0",
+      "count": 2006192
+    },
+    {
+      "time_control": "60+0",
+      "count": 1858829
+    },
+    {
+      "time_control": "600+0",
+      "count": 1587601
+    },
+    {
+      "time_control": "180+2",
+      "count": 452506
+    },
+    {
+      "time_control": "30+0",
+      "count": 361998
+    },
+    {
+      "time_control": "120+1",
+      "count": 346107
+    },
+    {
+      "time_control": "300+3",
+      "count": 312128
+    },
+    {
+      "time_control": "15+0",
+      "count": 243406
+    },
+    {
+      "time_control": "120+0",
+      "count": 234455
+    }
+  ],
+  "days": [
+    {
+      "utc_date": "2017.04.30",
+      "count": 29810
+    },
+    {
+      "utc_date": "2017.05.01",
+      "count": 395501
+    },
+    {
+      "utc_date": "2017.05.02",
+      "count": 368658
+    },
+    {
+      "utc_date": "2017.05.03",
+      "count": 369822
+    },
+    {
+      "utc_date": "2017.05.04",
+      "count": 369976
+    },
+    {
+      "utc_date": "2017.05.05",
+      "count": 370499
+    },
+    {
+      "utc_date": "2017.05.06",
+      "count": 368250
+    },
+    {
+      "utc_date": "2017.05.07",
+      "count": 382480
+    },
+    {
+      "utc_date": "2017.05.08",
+      "count": 384273
+    },
+    {
+      "utc_date": "2017.05.09",
+      "count": 381370
+    },
+    {
+      "utc_date": "2017.05.10",
+      "count": 372927
+    },
+    {
+      "utc_date": "2017.05.11",
+      "count": 374395
+    },
+    {
+      "utc_date": "2017.05.12",
+      "count": 376543
+    },
+    {
+      "utc_date": "2017.05.13",
+      "count": 373881
+    },
+    {
+      "utc_date": "2017.05.14",
+      "count": 376375
+    },
+    {
+      "utc_date": "2017.05.15",
+      "count": 380684
+    },
+    {
+      "utc_date": "2017.05.16",
+      "count": 380704
+    },
+    {
+      "utc_date": "2017.05.17",
+      "count": 370821
+    },
+    {
+      "utc_date": "2017.05.18",
+      "count": 371305
+    },
+    {
+      "utc_date": "2017.05.19",
+      "count": 385002
+    },
+    {
+      "utc_date": "2017.05.20",
+      "count": 364782
+    },
+    {
+      "utc_date": "2017.05.21",
+      "count": 377088
+    },
+    {
+      "utc_date": "2017.05.22",
+      "count": 381312
+    },
+    {
+      "utc_date": "2017.05.23",
+      "count": 382201
+    },
+    {
+      "utc_date": "2017.05.24",
+      "count": 369125
+    },
+    {
+      "utc_date": "2017.05.25",
+      "count": 377470
+    },
+    {
+      "utc_date": "2017.05.26",
+      "count": 371803
+    },
+    {
+      "utc_date": "2017.05.27",
+      "count": 366112
+    },
+    {
+      "utc_date": "2017.05.28",
+      "count": 384902
+    },
+    {
+      "utc_date": "2017.05.29",
+      "count": 387230
+    },
+    {
+      "utc_date": "2017.05.30",
+      "count": 389421
+    },
+    {
+      "utc_date": "2017.05.31",
+      "count": 352970
+    }
+  ]
+}

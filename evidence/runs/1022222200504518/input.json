@@ -1,0 +1,46 @@
+{
+  "run_id": "1022222200504518",
+  "month": "2017-05",
+  "test_bad_data": "false",
+  "compare_to": "",
+  "silver_table": "dsai3202_databricks.s_60306369.lichess_silver",
+  "silver_version": 6,
+  "silver_report": {
+    "lab": "phase1",
+    "run_id": "ba6bcba3-9f20-4937-9927-870b8286bd6a",
+    "month": "2017-05",
+    "completed_utc": "2026-11-04T19:52:28.817885+00:00",
+    "source": "abfss://processed@amazonlake60306369.dfs.core.windows.net/lichess/bronze_staged/month=2017-05",
+    "table": "dsai3202_databricks.s_60306369.lichess_silver",
+    "silver_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/lichess_silver",
+    "silver_version": 6,
+    "rejects_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/lichess_silver_rejects/run_id=ba6bcba3-9f20-4937-9927-870b8286bd6a",
+    "rows_in": 11693919,
+    "rows_out": 11687692,
+    "invalid_rows": 6227,
+    "duplicate_rows": 0,
+    "dropped": 6227,
+    "dropped_pct": 0.053,
+    "dropped_by_step": {
+      "invalid_game_id": 0,
+      "invalid_result": 6227,
+      "invalid_elo": 0,
+      "invalid_timestamp": 0,
+      "invalid_time_control": 0,
+      "duplicate": 0
+    },
+    "bronze_manifest": {
+      "source": "src/lichess_db_standard_rated_2017-05.pgn.zst",
+      "games_parsed": 11693919,
+      "unparseable": 0,
+      "parts": 59,
+      "plies_kept": 20
+    },
+    "source_sha256": "c4b2e39a382fb8a9dc5e766bbae0201d123c5c0ccc27f6e852d9a69e6661ab2f",
+    "harshest_filter": "invalid_result",
+    "rerun_same_content": true
+  },
+  "expected_rows": 11687692,
+  "input_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/lichess_runs/1022222200504518/input",
+  "started_at": "2026-11-04T19:52:55.394780+00:00"
+}

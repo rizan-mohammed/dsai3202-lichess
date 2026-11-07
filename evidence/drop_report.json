@@ -1,0 +1,29 @@
+{
+  "lab": 5,
+  "run_id": "1705904c-9908-4c25-b3be-83c6d4843eb9",
+  "completed_utc": "2026-10-01T06:10:21.461321+00:00",
+  "source": "abfss://processed@amazonlake60306369.dfs.core.windows.net/reviews/",
+  "table": "dsai3202_databricks.s_60306369.silver_reviews",
+  "silver_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/silver_reviews",
+  "silver_version": 2,
+  "rejects_path": "abfss://processed@amazonlake60306369.dfs.core.windows.net/silver_reviews_rejects/run_id=1705904c-9908-4c25-b3be-83c6d4843eb9",
+  "rows_in": 1689188,
+  "rows_out": 1687427,
+  "invalid_rows": 1761,
+  "duplicate_rows": 0,
+  "dropped": 1761,
+  "dropped_pct": 0.104,
+  "dropped_by_step": {
+    "null_key": 0,
+    "bad_rating": 0,
+    "bad_time": 0,
+    "bad_year": 0,
+    "short_text": 1761,
+    "duplicate": 0
+  },
+  "min_chars": 10,
+  "harshest_filter": "short_text",
+  "rerun_same_content": true,
+  "demo_baseline_version": 1,
+  "demo_restored": true
+}
