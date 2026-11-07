@@ -1,0 +1,164 @@
+DeepSeek FULL RESPONSE:
+'''## 0. Define your contract first
+
+New silver schema — one row per game:
+
+|Column|Type|Source|
+|-|-|-|
+|`game\_id`|string|`Site` URL (e.g. `ObT3MGJ6`)|
+|`white`, `black`|string|tags|
+|`result`|string|`1-0`, `0-1`, `1/2-1/2`|
+|`utc\_time`|bigint|`UTCDate`+`UTCTime` as epoch|
+|`event`, `eco`, `opening`, `time\_control`, `termination`|string|tags|
+|`white\_elo`, `black\_elo`|int|tags|
+|`moves`|string|SAN|
+|`n\_moves`|int|ply count|
+
+**KEY** = `\["game\_id"]`. **Expected rows** = your silver output count.
+
+\---
+
+## 1\. `00\_common.ipynb`
+
+**1a. KEY / SILVER\_COLUMNS**
+
+```python
+KEY = \["game\_id"]
+SILVER\_COLUMNS = KEY + \["white","black","result","utc\_time","event","eco",
+    "opening","time\_control","termination","white\_elo","black\_elo","moves","n\_moves"]
+```
+
+**1b. EXPECTED\_TYPES** — mirror the table above (`game\_id:string, utc\_time:bigint, white\_elo:int, …`).
+
+**1c. FEATURE\_COLUMNS** (Lab 7 target = "did White win?")
+
+```python
+FEATURE\_COLUMNS = KEY + \["utc\_time","elo\_diff","avg\_elo","time\_control\_seconds",
+    "n\_moves","white\_prior\_games","white\_prior\_win\_rate",
+    "black\_prior\_games","black\_prior\_win\_rate","label"]
+```
+
+**1d. ORPHAN\_TOLERANCE** — keep 0.005 only if you join to metadata (player/opening table); else drop the entire metadata block.
+
+**1e. config()** — rename tables:
+
+```python
+c\["table"]      = f"{c\['catalog']}.{c\['schema']}.silver\_games"
+c\["gold\_table"] = f"{c\['catalog']}.{c\['schema']}.gold\_games"
+```
+
+Job parameters (`lake`, `catalog`, `schema`, `run\_id`, `test\_bad\_votes`, `compare\_to`) unchanged.
+
+**1f. profile()** — swap review columns for game columns: replace `reviewText/review\_len\_chars` → `moves/move\_len\_chars`, `overall` → `result`, `review\_year` → `termination`; correlate `white\_elo` vs `black\_elo` instead of rating vs length.
+
+**1g. evaluate\_gate()** — rewrite rules (no metadata join case):
+
+```python
+result\_ok = F.coalesce(F.col("result").isin("1-0","0-1","1/2-1/2"), F.lit(False))
+term\_ok   = F.coalesce(F.col("termination").isin(
+              "Normal","Time forfeit","Abandoned","Rules infraction","Unterminated"), F.lit(False))
+elo\_ok    = F.coalesce((F.col("white\_elo")>0) \& (F.col("black\_elo")>0), F.lit(False))
+moves\_ok  = F.coalesce(F.length(F.trim("moves")) >= 2, F.lit(False))
+tc\_ok     = F.coalesce(F.col("time\_control").rlike(r"^\\d+\\+\\d+$"), F.lit(False))
+# + game\_id non-empty, unique\_game check
+```
+
+Drop `unique\_product`, `metadata\_coverage`, `missing\_price` if no join.
+
+**1h. coverage()** — call with `"result"` and `"termination"` (function itself unchanged).
+
+**1i. make\_features()** — biggest rewrite:
+
+```python
+user\_history  = Window.partitionBy("white").orderBy("utc\_time").rangeBetween(Window.unboundedPreceding, -1)
+black\_history = Window.partitionBy("black").orderBy("utc\_time").rangeBetween(Window.unboundedPreceding, -1)
+white\_won = F.when(F.col("result")=="1-0",1).when(F.col("result")=="0-1",0).otherwise(None)
+tc\_seconds = F.regexp\_extract("time\_control", r"^(\\d+)\\+", 1).cast("int")
+# elo\_diff, avg\_elo, tc\_seconds, n\_moves, prior counts/win-rates (strictly earlier), label = white\_won
+```
+
+Preserve the `-1` (unboundedPreceding, -1) anti‑leakage pattern.
+
+\---
+
+## 2\. `01\_prepare.ipynb`
+
+**Step 1** — drop the `1\_689\_188` hard‑code:
+
+```python
+assert lab5\["rows\_in"] > 0 and lab5\["rows\_out"] > 0
+assert lab5\["rows\_in"] == lab5\["rows\_out"] + sum(lab5\["dropped\_by\_step"].values())
+```
+
+**Step 2** — remove metadata read if no join; else rename schema/`normalize\_metadata`.
+
+**Step 3** — change injected bad value:
+
+```python
+source = source.withColumn("result", F.when(match, F.lit("2-0")).otherwise(F.col("result")))
+```
+
+**Steps 4–5** — unchanged.
+
+\---
+
+## 3\. `02\_validate.ipynb` — minimal edits
+
+* Call signature: `evaluate\_gate(silver, manifest\["expected\_rows"])` (drop `meta` if no join).
+* Quarantine `if orphans is not None:` block auto‑skips — no change.
+
+\---
+
+## 4\. `03\_publish.ipynb`
+
+**Step 2** — no join case:
+
+```python
+gold = silver
+```
+
+With join: `join(meta, "white", "inner")` and append metadata columns.
+
+**Step 4** — coverage calls:
+
+```python
+"results":      \[r.asDict() for r in coverage(silver, gold, "result").orderBy("result").collect()],
+"terminations": \[r.asDict() for r in coverage(silver, gold, "termination").orderBy("termination").collect()],
+"gold\_rows\_missing\_white\_elo": gold.filter("white\_elo IS NULL").count(),
+"gold\_rows\_missing\_black\_elo": gold.filter("black\_elo IS NULL").count()
+```
+
+**Steps 3, 5, 6, 7** — unchanged.
+
+\---
+
+## 5\. `04\_inspect.ipynb` — 3 edits
+
+* **3.1:** `summary\["ratings"]` → `summary\["results"]`; label text "Reviews" → "Games".
+* **4.1:** `eda\["ratings"]`/`eda\["years"]` → `eda\["results"]`/`eda\["terminations"]`; missing‑price/brand → missing‑elo.
+* **6.1:** `"helpful\_pair"` → `"result"` in the failed‑rule assertion.
+
+\---
+
+## 6\. Gotchas
+
+1. Replace **both** `1\_689\_188` occurrences (Lab‑5 `01\_prepare` and any lab‑5 constant).
+2. `same\_content` requires matching column names/types — make sure gold snapshot and current table stay aligned after join.
+3. Label direction: flip `white\_won` if you later want "did Black win?".
+4. `time\_control` can be `40/300` (correspondence) — loosen regex if present.
+5. Lichess duplicates (same `Site` twice) — consider quarantine instead of `fail` for `unique\_game`.
+6. Grep for `helpful|overall|reviewText|review\_year|asin|price|brand` — \~40 hits across the six notebooks. `Ctrl+H` + `assert not schema\_errors(silver)` catches typos.
+
+\---
+
+## 7\. Recommended re‑work order
+
+1. Rewrite `00\_common` → run its last cell (prints `00\_common loaded: …`).
+2. Run `04\_inspect` cell 0.1 with Lichess hand‑made rows — validates gate in isolation.
+3. Run `01\_prepare` manually → check `input.json`/`profile.json`.
+4. Run `02\_validate` manually (pass, then re‑run with `test\_bad\_votes=true` → expect `result` failure).
+5. Run `03\_publish` manually → confirm `gold\_games` in catalog.
+6. Only then wire into a Databricks job and use `04\_inspect` for evidence.
+
+Post your final silver schema + metadata situation, and I'll hand you the exact `00\_common`.''' 
+
