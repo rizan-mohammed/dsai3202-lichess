@@ -1,0 +1,44 @@
+# One run of train.py. Used for the baselines and for single re-runs: you override values with  --set  (scripts/submit.sh).
+# No compute: line = serverless compute, as in Labs 8-9. Adapted from Lab-9 project/job.yml.
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: lichess-train
+experiment_name: lichess-phase2
+description: Phase 2 - one run of train.py on the retained Lichess snapshot (train and validation days only)
+
+code: .
+command: >-
+  python train.py
+  --data ${{inputs.data}}
+  --model ${{inputs.model}}
+  --features ${{inputs.features}}
+  --seed ${{inputs.seed}}
+  --train_rows ${{inputs.train_rows}}
+  --val_rows ${{inputs.val_rows}}
+  --C ${{inputs.C}}
+  --max_iter ${{inputs.max_iter}}
+  --learning_rate ${{inputs.learning_rate}}
+  --max_leaf_nodes ${{inputs.max_leaf_nodes}}
+  --l2 ${{inputs.l2}}
+  --git_commit ${{inputs.git_commit}}
+
+inputs:
+  data:
+    type: uri_folder
+    path: azureml:lichess-features:1
+  model: hgb
+  features: full
+  seed: 42
+  train_rows: 300000      # hash-sampled; 0 = all 6.8M training rows
+  val_rows: 200000        # hash-sampled; 0 = all validation rows
+  C: 1.0
+  max_iter: 500
+  learning_rate: 0.1
+  max_leaf_nodes: 31
+  l2: 0.0
+  git_commit: unknown     # scripts/submit.sh fills this from .git_commit
+
+environment: azureml:lichess-env:1
+
+identity:
+  type: user_identity

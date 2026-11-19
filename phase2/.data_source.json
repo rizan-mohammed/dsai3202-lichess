@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "phase1_run_id": "1022222200504518",
+  "phase1_features_path": "curated/lichess_runs/1022222200504518/features",
+  "phase1_source_sha256": "c4b2e39a382fb8a9dc5e766bbae0201d123c5c0ccc27f6e852d9a69e6661ab2f",
+  "phase1_silver_version": 6,
+  "parts": [
+    {
+      "path": "part-00000-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1603-1.c000.snappy.parquet",
+      "sha256": "f6d4d3aadd1b49977acf61717b13563de1ff1e8c6d2cb7555b30ccd17e32737d",
+      "rows": 1168918,
+      "bytes": 38803334
+    },
+    {
+      "path": "part-00001-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1604-1.c000.snappy.parquet",
+      "sha256": "f0783d2bf689d6d993a3cbcfff09f15b9df09b96c364335267c75d03026174fb",
+      "rows": 1169548,
+      "bytes": 38909804
+    },
+    {
+      "path": "part-00002-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1605-1.c000.snappy.parquet",
+      "sha256": "7195d488fd00623b31c3c056ea7bb3b0258b2ab112e88f6bb4b6d50ad4887d90",
+      "rows": 2336664,
+      "bytes": 78042619
+    },
+    {
+      "path": "part-00003-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1606-1.c000.snappy.parquet",
+      "sha256": "556005c9711228ae1cc7f2dd3ad537eabf5977bfb19bf40280f461d6d4e415fd",
+      "rows": 1112760,
+      "bytes": 37039267
+    },
+    {
+      "path": "part-00004-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1607-1.c000.snappy.parquet",
+      "sha256": "0b338903ab1e979a9a97682941d99f9f8665dddc9f3a4357baf8ab591eef56ae",
+      "rows": 891041,
+      "bytes": 29477682
+    },
+    {
+      "path": "part-00005-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1608-1.c000.snappy.parquet",
+      "sha256": "16c625e69cb3e68473efb13ef006bd06faacc4c21a505d0a4fc1cdff5888cc9e",
+      "rows": 1780493,
+      "bytes": 59449721
+    },
+    {
+      "path": "part-00006-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1609-1.c000.snappy.parquet",
+      "sha256": "7b6334aca3fd69cecb3efc44f9d458483c065dbd66eab92f80962186a75b73da",
+      "rows": 889716,
+      "bytes": 29414977
+    },
+    {
+      "path": "part-00007-tid-1422468212240843160-d2ca009d-4f8e-48cf-b8f0-84015c9b336a-1610-1.c000.snappy.parquet",
+      "sha256": "1e714074ec3bb16dd109a0ebbfa369d41e4c175ef5f8e4764b999ce867bbb029",
+      "rows": 1779969,
+      "bytes": 59372548
+    }
+  ],
+  "rows": 11129109,
+  "snapshot_sha256": "892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95",
+  "path": "abfss://curated@amazonlake60306369.dfs.core.windows.net/lichess_snapshots/892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95/features/"
+}

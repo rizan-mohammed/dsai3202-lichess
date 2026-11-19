@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+name: lichess-features
+version: 1
+type: uri_folder
+description: Retained Phase 1 features (Lichess 2017-05) from job run 1022222200504518
+path: abfss://curated@amazonlake60306369.dfs.core.windows.net/lichess_snapshots/892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95/features/
+tags:
+  snapshot_sha256: 892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95
+  phase1_run_id: "1022222200504518"
+  source_sha256: c4b2e39a382fb8a9dc5e766bbae0201d123c5c0ccc27f6e852d9a69e6661ab2f

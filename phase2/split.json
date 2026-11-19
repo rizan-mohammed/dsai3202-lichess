@@ -1,0 +1,62 @@
+{
+  "method": "utc-day-chronological-v1",
+  "seed": 42,
+  "data_sha256": "892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95",
+  "rule": "partition = number of boundaries <= the game's UTC start time; boundaries are UTC day starts",
+  "boundaries_epoch": [
+    1495238400,
+    1495670400,
+    1496016000
+  ],
+  "boundaries_utc": [
+    "2017-05-20 00:00:00",
+    "2017-05-25 00:00:00",
+    "2017-05-29 00:00:00"
+  ],
+  "train": {
+    "rows": 6823904,
+    "class_counts_white_draw_black": [
+      3373044,
+      269508,
+      3181352
+    ],
+    "first_game_utc": "2017-05-01 00:00:01",
+    "last_game_utc": "2017-05-19 23:59:59",
+    "membership_sha256": "b9e4a87c0a332892b59ba59f4b49a0c361f5a9922863aa6c75ea051ff8d0a06c"
+  },
+  "val": {
+    "rows": 1790683,
+    "class_counts_white_draw_black": [
+      885521,
+      70454,
+      834708
+    ],
+    "first_game_utc": "2017-05-20 00:00:00",
+    "last_game_utc": "2017-05-24 23:59:57",
+    "membership_sha256": "abd1bc6a5ff2e9e53e83d4395723073f87f1db2af9de29c5c4a1367ec0140c18"
+  },
+  "test": {
+    "rows": 1434547,
+    "class_counts_white_draw_black": [
+      709599,
+      56673,
+      668275
+    ],
+    "first_game_utc": "2017-05-25 00:00:00",
+    "last_game_utc": "2017-05-28 23:59:59",
+    "membership_sha256": "2bd500639613384026772daa004e2d0adad2dfe338a16f1195fbcc40a26dc5e3"
+  },
+  "deploy": {
+    "rows": 1079975,
+    "class_counts_white_draw_black": [
+      534047,
+      43100,
+      502828
+    ],
+    "first_game_utc": "2017-05-29 00:00:01",
+    "last_game_utc": "2017-05-31 21:59:59",
+    "membership_sha256": "f54fe3c91d73f03f36a9df9a391c5f9adf1b76b17eb9f6ad2f340f166dbf31ae"
+  },
+  "deploy_from_ts": 1496016000,
+  "split_id": "9f2142551a36c29ba3ad76185e44aaf9ca14bcb38efcac5d87d222957951b3b7"
+}

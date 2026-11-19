@@ -1,0 +1,55 @@
+# Stage 2 sweep: tune HistGradientBoosting on the feature group stage 1 chose (set with --set inputs.features=...).
+# 2 learning rates x 3 leaf sizes = 6 trials, on validation only.
+$schema: https://azuremlschemas.azureedge.net/latest/sweepJob.schema.json
+type: sweep
+display_name: lichess-sweep-hgb
+experiment_name: lichess-phase2
+description: HistGradientBoosting learning_rate x max_leaf_nodes on the chosen feature group
+
+trial:
+  code: .
+  command: >-
+    python train.py
+    --data ${{inputs.data}}
+    --model hgb
+    --features ${{inputs.features}}
+    --seed ${{inputs.seed}}
+    --train_rows ${{inputs.train_rows}}
+    --val_rows ${{inputs.val_rows}}
+    --git_commit ${{inputs.git_commit}}
+    --learning_rate ${{search_space.learning_rate}}
+    --max_leaf_nodes ${{search_space.max_leaf_nodes}}
+  environment: azureml:lichess-env:1
+
+inputs:
+  data:
+    type: uri_folder
+    path: azureml:lichess-features:1
+  features: full
+  seed: 42
+  train_rows: 300000
+  val_rows: 200000
+  git_commit: unknown
+
+search_space:
+  learning_rate:
+    type: choice
+    values: [0.05, 0.1]
+  max_leaf_nodes:
+    type: choice
+    values: [15, 31, 63]
+
+sampling_algorithm: grid
+
+objective:
+  goal: minimize
+  primary_metric: val_log_loss
+
+limits:
+  max_total_trials: 6
+  max_concurrent_trials: 2
+  timeout: 7200
+  trial_timeout: 2400
+
+identity:
+  type: user_identity

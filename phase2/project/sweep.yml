@@ -1,0 +1,53 @@
+# Stage 1 sweep: 2 models x 4 feature groups = 8 trials, judged on validation log loss (lower is better).
+# This is also the ablation: rating -> +time control -> +opening -> +early clocks.
+# Adapted from Lab-9 project/sweep.yml. primary_metric must match mlflow.log_metrics in train.py exactly.
+$schema: https://azuremlschemas.azureedge.net/latest/sweepJob.schema.json
+type: sweep
+display_name: lichess-sweep-features
+experiment_name: lichess-phase2
+description: logreg vs HistGradientBoosting x four feature groups, 300k train / 200k validation rows
+
+trial:
+  code: .
+  command: >-
+    python train.py
+    --data ${{inputs.data}}
+    --seed ${{inputs.seed}}
+    --train_rows ${{inputs.train_rows}}
+    --val_rows ${{inputs.val_rows}}
+    --git_commit ${{inputs.git_commit}}
+    --model ${{search_space.model}}
+    --features ${{search_space.features}}
+  environment: azureml:lichess-env:1
+
+inputs:
+  data:
+    type: uri_folder
+    path: azureml:lichess-features:1
+  seed: 42
+  train_rows: 300000
+  val_rows: 200000
+  git_commit: unknown
+
+search_space:
+  model:
+    type: choice
+    values: [logreg, hgb]
+  features:
+    type: choice
+    values: [rating, rating_tc, rating_tc_opening, full]
+
+sampling_algorithm: grid
+
+objective:
+  goal: minimize
+  primary_metric: val_log_loss
+
+limits:
+  max_total_trials: 8
+  max_concurrent_trials: 2
+  timeout: 7200
+  trial_timeout: 2400
+
+identity:
+  type: user_identity
