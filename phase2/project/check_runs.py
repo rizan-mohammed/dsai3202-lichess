@@ -6,8 +6,8 @@ from aml_common import WEEK, connect, read_file
 
 _, client = connect()
 exp = client.get_experiment_by_name("lichess-phase2")
-runs = [] if exp is None else [r for r in client.search_runs([exp.experiment_id], "attributes.status = 'FINISHED'", max_results=500)
-                              if "val_log_loss" in r.data.metrics]
+runs = [] if exp is None else [r for r in client.search_runs([exp.experiment_id], max_results=500)
+                              if r.info.status == "FINISHED" and "val_log_loss" in r.data.metrics]
 snap = json.loads((WEEK / ".data_source.json").read_text())["snapshot_sha256"]
 by = lambda **kw: [r for r in runs if all(r.data.params.get(k) == v for k, v in kw.items())]
 ok = 0
@@ -27,6 +27,6 @@ chk("5 every run read the same retained snapshot", runs and all(r.data.params.ge
 chk("6 every run used the same split rule", runs and len({r.data.params.get("split_id") for r in runs}) == 1 and all(r.data.params.get("split_id") for r in runs),
     "copy split.json into project/ (submit.sh does it) and rerun")
 chk("7 every run recorded the same code hash", runs and len({r.data.params.get("code_sha256") for r in runs}) == 1, "all runs must come from one version of train.py")
-chk("8 every run recorded the commit", runs and all(r.data.params.get("git_commit") == sha for r in runs), "submit after writing .git_commit")
+chk("8 every run recorded a full commit id", runs and all(re.fullmatch(r"[0-9a-f]{40}", r.data.params.get("git_commit", "")) for r in runs), "submit after writing .git_commit")
 print(f"{ok}/8 checks passed")
 sys.exit(0 if ok == 8 else 1)

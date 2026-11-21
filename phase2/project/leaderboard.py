@@ -26,11 +26,9 @@ def main():
     exp = client.get_experiment_by_name(a.experiment)
     if exp is None:
         raise SystemExit(f"no experiment {a.experiment} yet - submit a job first (scripts/submit.sh)")
-    flt = "attributes.status = 'FINISHED'"
-    if a.sweep:
-        flt += f" and tags.mlflow.parentRunId = '{a.sweep}'"
-    runs = [r for r in client.search_runs([exp.experiment_id], filter_string=flt, max_results=500)
-            if "val_log_loss" in r.data.metrics]
+    runs = [r for r in client.search_runs([exp.experiment_id], max_results=500)
+            if r.info.status == "FINISHED" and "val_log_loss" in r.data.metrics and r.info.run_name != "smoke"
+            and (not a.sweep or r.data.tags.get("mlflow.parentRunId") == a.sweep)]
     if not runs:
         raise SystemExit("no finished runs with val_log_loss yet")
     rows = []

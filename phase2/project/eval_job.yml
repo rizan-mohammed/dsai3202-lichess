@@ -1,0 +1,32 @@
+# The one holdout evaluation (Phase 2 II.2). Needs three finished runs trained on the SAME rows:
+# majority, rating-only logistic baseline and the selected gradient-boosted candidate.
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: lichess-holdout-eval
+experiment_name: lichess-phase2
+description: Phase 2 - evaluate candidate and baselines once on the untouched test days; paired bootstrap; error analysis
+
+code: .
+command: >-
+  python final_eval.py
+  --data ${{inputs.data}}
+  --candidate ${{inputs.candidate}}
+  --baseline ${{inputs.baseline}}
+  --majority ${{inputs.majority}}
+  --boot ${{inputs.boot}}
+  --git_commit ${{inputs.git_commit}}
+
+inputs:
+  data:
+    type: uri_folder
+    path: azureml:lichess-features:1
+  candidate: REPLACE_WITH_RUN_ID
+  baseline: REPLACE_WITH_RUN_ID
+  majority: REPLACE_WITH_RUN_ID
+  boot: 1000
+  git_commit: unknown
+
+environment: azureml:lichess-env:1
+
+identity:
+  type: user_identity

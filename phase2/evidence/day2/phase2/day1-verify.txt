@@ -1,5 +1,0 @@
-PASS  1 retained snapshot recorded (.data_source.json)
-PASS  2 data asset lichess-features:1 points at that snapshot
-PASS  3 environment lichess-env:1 registered
-PASS  4 split.json has four non-empty partitions
-4/4 checks passed
