@@ -1,0 +1,9 @@
+2026-11-19T03:07:53Z  smoke  crimson_quince_p28q1c297z  project/job.yml  --set inputs.model=majority --set inputs.train_rows=20000 --set inputs.val_rows=10000
+2026-11-19T03:17:51Z  baseline-majority  boring_boniato_3q7rhbxzl2  project/job.yml  --set inputs.model=majority
+2026-11-19T03:17:56Z  baseline-logreg-elo  jovial_crayon_yrwnszb7ln  project/job.yml  --set inputs.model=logreg --set inputs.features=elo_diff_only
+2026-11-19T03:18:00Z  sweep-features  sad_bottle_l2y9wyykl9  project/sweep.yml  
+2026-11-19T04:05:30Z  sweep-hgb  placid_pencil_753511n7nb  project/sweep_hgb.yml  
+2026-11-21T14:32:24Z  final-majority  crimson_lime_j481nfr46n  project/job.yml  --set inputs.model=majority --set inputs.train_rows=2000000 --set inputs.val_rows=500000
+2026-11-21T14:32:28Z  final-logreg-elo  cyan_jackal_2h6xc7h2q2  project/job.yml  --set inputs.model=logreg --set inputs.features=elo_diff_only --set inputs.train_rows=2000000 --set inputs.val_rows=500000
+2026-11-21T14:32:33Z  final-hgb  silly_yak_pvrk680xh1  project/job.yml  --set inputs.model=hgb --set inputs.features=full --set inputs.learning_rate=0.05 --set inputs.max_leaf_nodes=15 --set inputs.max_iter=1000 --set inputs.train_rows=2000000 --set inputs.val_rows=500000
+2026-11-21T14:49:20Z  holdout-eval  gifted_station_jyh1x2m5xl  project/eval_job.yml  --set inputs.candidate=silly_yak_pvrk680xh1 --set inputs.baseline=cyan_jackal_2h6xc7h2q2 --set inputs.majority=crimson_lime_j481nfr46n

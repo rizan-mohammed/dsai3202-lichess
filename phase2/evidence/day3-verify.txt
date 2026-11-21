@@ -1,0 +1,9 @@
+PASS  1 final-majority finished with >= 1,000,000 training rows
+PASS  2 final-logreg-elo finished with >= 1,000,000 training rows
+PASS  3 final-hgb finished with >= 1,000,000 training rows
+PASS  4 holdout evaluation finished
+PASS  5 test membership matched split.json
+PASS  6 all three models were trained on the same rows
+PASS  7 results downloaded to evidence/final/holdout
+PASS  8 H1 verdict recorded
+8/8 checks passed

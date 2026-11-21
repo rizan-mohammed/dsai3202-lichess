@@ -1,0 +1,8 @@
+experiment lichess-phase2   6 finished runs   sorted on val_log_loss (low first)
+#  run id                                  model    features              lr leaf   val_ll    gain    acc    auc    ece     gap  fit_s  p95ms  snap/git/code
+1  placid_pencil_753511n7nb_0              hgb      full                0.05   15   0.7652  0.0659 0.6113 0.6895 0.0024  0.014610.2397 8.9325  892034724518/59217f63/b2162da9
+2  placid_pencil_753511n7nb_3              hgb      full                 0.1   15   0.7656  0.0655 0.6105 0.6888 0.0031  0.0091 3.9768 5.7052  892034724518/59217f63/b2162da9
+3  placid_pencil_753511n7nb_1              hgb      full                0.05   31   0.7657  0.0654 0.6102 0.6889 0.0030  0.0152 6.7630 7.2885  892034724518/59217f63/b2162da9
+4  placid_pencil_753511n7nb_4              hgb      full                 0.1   31   0.7658  0.0653 0.6102 0.6889 0.0017  0.0162 4.1515 6.2187  892034724518/59217f63/b2162da9
+5  placid_pencil_753511n7nb_2              hgb      full                0.05   63   0.7664  0.0647 0.6095 0.6880 0.0012  0.0263 7.3556 7.3969  892034724518/59217f63/b2162da9
+6  placid_pencil_753511n7nb_5              hgb      full                 0.1   63   0.7667  0.0644 0.6096 0.6878 0.0021  0.0274 4.3008 5.1577  892034724518/59217f63/b2162da9

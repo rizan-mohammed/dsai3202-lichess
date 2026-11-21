@@ -1,0 +1,47 @@
+{
+  "test_metrics": {
+    "candidate": {
+      "log_loss": 0.7638099286879692,
+      "accuracy": 0.6106854637735815,
+      "auc_white": 0.6896708662349698,
+      "ece": 0.0017664754022848792
+    },
+    "baseline": {
+      "log_loss": 0.7770476694879621,
+      "accuracy": 0.5968734380957891,
+      "auc_white": 0.671851791030828,
+      "ece": 0.0016131543057604193
+    },
+    "majority": {
+      "log_loss": 0.8317027226578951,
+      "accuracy": 0.4946502275631262,
+      "auc_white": 0.5,
+      "ece": 0.00011107613194266674
+    }
+  },
+  "verdict": {
+    "hypothesis": "H1: full gradient-boosted model lowers test log loss by >= 0.005 vs rating-only logistic, 95% CI excludes 0",
+    "improvement_mean": 0.01323774079999222,
+    "ci95_low": 0.012966928197406434,
+    "ci95_high": 0.013494885357322862,
+    "bootstrap_resamples": 1000,
+    "threshold": 0.005,
+    "supported": true,
+    "test_games": 1434547,
+    "improvement_vs_majority": 0.06789279396992598,
+    "note": "resampling is by game; games sharing players or days are not independent, so the interval is somewhat optimistic"
+  },
+  "runs": {
+    "candidate": "silly_yak_pvrk680xh1",
+    "baseline": "cyan_jackal_2h6xc7h2q2",
+    "majority": "crimson_lime_j481nfr46n"
+  },
+  "train_rows_used": {
+    "candidate": "1997858",
+    "baseline": "1997858",
+    "majority": "1997858"
+  },
+  "split_id": "9f2142551a36c29ba3ad76185e44aaf9ca14bcb38efcac5d87d222957951b3b7",
+  "snapshot_sha256": "892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95",
+  "test_membership_sha256": "2bd500639613384026772daa004e2d0adad2dfe338a16f1195fbcc40a26dc5e3"
+}
