@@ -1,0 +1,5 @@
+2026-11-19T03:07:53Z  smoke  crimson_quince_p28q1c297z  project/job.yml  --set inputs.model=majority --set inputs.train_rows=20000 --set inputs.val_rows=10000
+2026-11-19T03:17:51Z  baseline-majority  boring_boniato_3q7rhbxzl2  project/job.yml  --set inputs.model=majority
+2026-11-19T03:17:56Z  baseline-logreg-elo  jovial_crayon_yrwnszb7ln  project/job.yml  --set inputs.model=logreg --set inputs.features=elo_diff_only
+2026-11-19T03:18:00Z  sweep-features  sad_bottle_l2y9wyykl9  project/sweep.yml  
+2026-11-19T04:05:30Z  sweep-hgb  placid_pencil_753511n7nb  project/sweep_hgb.yml  

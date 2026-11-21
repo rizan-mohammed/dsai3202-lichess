@@ -1,0 +1,11 @@
+/home/azureuser/.local/lib/python3.12/site-packages/azureml/mlflow/_protos/aml_service_pb2.py:10: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
+  from google.protobuf import service as _service
+PASS  1 .git_commit holds a 40-character commit id
+PASS  2 majority baseline finished
+PASS  3 rating-only logistic baseline (elo_diff only) finished
+PASS  4 sweep covers all 8 model x feature-group combinations
+PASS  5 every run read the same retained snapshot
+PASS  6 every run used the same split rule
+PASS  7 every run recorded the same code hash
+PASS  8 every run recorded the commit
+8/8 checks passed
