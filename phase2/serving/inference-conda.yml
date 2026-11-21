@@ -1,0 +1,15 @@
+# Serving environment: the training versions (scikit-learn 1.5.2 etc.) plus the Azure inference server.
+name: lichess-inference
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.9
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - scipy==1.13.1
+      - scikit-learn==1.5.2
+      - pandas==2.2.3
+      - mlflow-skinny==2.17.2
+      - cloudpickle
+      - azureml-inference-server-http==1.6.1

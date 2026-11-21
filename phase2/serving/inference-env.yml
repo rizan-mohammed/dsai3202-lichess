@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: lichess-inference-env
+version: 1
+description: Serving environment for the Lichess outcome model (scikit-learn 1.5.2, Azure inference server)
+image: mcr.microsoft.com/azureml/minimal-ubuntu22.04-py39-cpu-inference:latest
+conda_file: inference-conda.yml

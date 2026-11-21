@@ -1,0 +1,5 @@
+# The front door. The real name is passed with --name by scripts/deploy.sh (it must be unique in the region).
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+name: eplichess-placeholder
+auth_mode: key
+description: Lichess game-outcome model - P(White win), P(draw), P(Black win) after 20 plies

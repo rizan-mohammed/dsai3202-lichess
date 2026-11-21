@@ -1,0 +1,11 @@
+{"data": [
+  {"id": "example-1", "white_elo": 1850, "black_elo": 1790, "elo_diff": 60, "elo_mean": 1820.0, "tc_base": 300, "tc_inc": 0, "speed_class": 1,
+   "eco": "C50", "eco_family": "C", "opening_family": "Italian Game", "w_clk_1": 298, "b_clk_1": 299,
+   "w_used_10": 71, "b_used_10": 64, "used_diff_10": 7, "unequal_start": 1},
+  {"id": "example-2", "white_elo": 1500, "black_elo": 1640, "elo_diff": -140, "elo_mean": 1570.0, "tc_base": 180, "tc_inc": 2, "speed_class": 1,
+   "eco": "B01", "eco_family": "B", "opening_family": "Scandinavian Defense", "w_clk_1": 179, "b_clk_1": 180,
+   "w_used_10": 52, "b_used_10": 55, "used_diff_10": -3, "unequal_start": 1},
+  {"id": "example-3", "white_elo": 2105, "black_elo": 1980, "elo_diff": 125, "elo_mean": 2042.5, "tc_base": 600, "tc_inc": 5, "speed_class": 2,
+   "eco": "D02", "eco_family": "D", "opening_family": "Queen's Pawn Game", "w_clk_1": 599, "b_clk_1": 599,
+   "w_used_10": 90, "b_used_10": 88, "used_diff_10": 2, "unequal_start": 0}
+]}

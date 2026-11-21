@@ -1,0 +1,16 @@
+# The deployment behind the endpoint: ONE pinned model version, the script, the environment, a VM size.
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: eplichess-placeholder       # replaced on the command line
+model: azureml:lichess-outcome:__VER__
+code_configuration:
+  code: .
+  scoring_script: score.py
+environment: azureml:lichess-inference-env:1
+instance_type: Standard_DS2_v2
+instance_count: 1
+environment_variables:
+  MODEL_NAME: lichess-outcome
+  MODEL_VERSION: "__VER__"
+request_settings:
+  request_timeout_ms: 20000

@@ -1,0 +1,1 @@
+{"data": [{"id": "example-1", "white_elo": "quite high", "black_elo": 1790, "elo_diff": 60, "elo_mean": 1820.0, "tc_base": 300, "tc_inc": 0, "speed_class": 1, "eco": "C50", "eco_family": "C", "opening_family": "Italian Game", "w_clk_1": 298, "b_clk_1": 299, "w_used_10": 71, "b_used_10": 64, "used_diff_10": 7, "unequal_start": 1}]}
