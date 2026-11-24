@@ -382,4 +382,4 @@ Reused or adapted: the Phase 1 lab base (Labs 3 to 6, see Phase 1) and the struc
 | Phase 1 notebooks | DeepSeek | Gave a guide for adapting the Lab 6 notebooks to Lichess (`AI_use.txt`) | Rewrote the notebooks for my dataset and ran the pipeline |
 | Phase 2 code (`phase2/project`, `serving`, `scripts`) | Claude (Anthropic) | Drafted and revised the scripts from the requirements and the lab patterns | Ran every job and check on Azure, fixed setup problems, chose the final design and hypothesis, and evaluated the test set once |
 | Debugging | Claude | Diagnosed my logs (status code 424, a check string) and patched three files | Reran the checks on the live endpoint |
-| This README and the slides | Claude | Drafted text from my evidence files | Checked every number against `evidence/` and edited the text |
+| This README and the evidence prep for the slides | Claude | Drafted text from my evidence files | Checked every number against `evidence/` and edited the text |
