@@ -380,7 +380,7 @@ Reused or adapted: the Phase 1 lab base (Labs 3 to 6, see Phase 1) and the struc
 | Where AI was used | Tool | What I asked / what it did | What I changed or how I checked it |
 |---|---|---|---|
 | Phase 1: adapting the lab notebooks to the Lichess dataset | DeepSeek | Asked how to rework the Lab 6 notebooks for my dataset; it returned a guide (full response in `AI_use.txt`) | Rewrote the notebooks for my dataset, using the guide as a starting point |
-| Phase 2: training, evaluation, registration, serving and verification scripts (`phase2/project`, `phase2/serving`, `phase2/scripts`) | Claude (Anthropic) | Drafted and revised the code from the Phase 2 requirements and the lab patterns | Ran every script on Azure myself; the checks `verify.sh` to `verify4.sh` pass; results come from my own runs |
-| Phase 2: study design (split, baselines, hypothesis test, bootstrap) | Claude | Proposed the design and explained the options | I chose the final design and the hypothesis; the test set was evaluated once, after the candidate was fixed |
+| Phase 2: verification scripts | Claude (Anthropic) | Drafted and revised the code from the Phase 2 requirements and the lab patterns | Ran every script on Azure; the checks `verify.sh` to `verify4.sh` pass; results come from my own runs |
+| Phase 2: study design (split, baselines, hypothesis test, bootstrap) | Claude | Proposed the design and explained the options | I made the final design and the hypothesis; the test set was evaluated once, after the candidate was fixed |
 | Phase 2: debugging deployment issues (status code 424, check 3) | Claude | Diagnosed from my logs and patched `client_tests.py`, `check_deploy.py`, `INPUT_CONTRACT.md` | Reran the checks on the live endpoint |
-| Phase 2: this README and the slides | Claude | Drafted text from my evidence files | I checked every number against `evidence/` and edited the text |
+| Phase 2: this README update | Claude | Drafted text from my evidence files | |
