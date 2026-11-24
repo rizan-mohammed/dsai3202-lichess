@@ -1,0 +1,10 @@
+experiment lichess-phase2   8 finished runs   sorted on val_log_loss (low first)   sweep job: sad_bottle_l2y9wyykl9
+#  run id                                  model    features              lr leaf   val_ll    gain    acc    auc    ece     gap  fit_s  p95ms  snap/git/code
+1  sad_bottle_l2y9wyykl9_0                 hgb      full                 0.1   31   0.7658  0.0653 0.6102 0.6889 0.0017  0.0162 4.0861 5.0547  892034724518/59217f63/b2162da9
+2  sad_bottle_l2y9wyykl9_4                 logreg   full                   -    -   0.7716  0.0596 0.6046 0.6805 0.0027 -0.0001 5.1560 4.7593  892034724518/59217f63/b2162da9
+3  sad_bottle_l2y9wyykl9_7                 logreg   rating_tc_opening      -    -   0.7748  0.0563 0.5988 0.6741 0.0017  0.0005 3.2825 4.8977  892034724518/59217f63/b2162da9
+4  sad_bottle_l2y9wyykl9_2                 hgb      rating_tc            0.1   31   0.7751  0.0560 0.5976 0.6730 0.0026  0.0074 2.2677 3.9100  892034724518/59217f63/b2162da9
+5  sad_bottle_l2y9wyykl9_6                 logreg   rating_tc              -    -   0.7751  0.0560 0.5983 0.6735 0.0022  0.0002 1.8542 2.7994  892034724518/59217f63/b2162da9
+6  sad_bottle_l2y9wyykl9_5                 logreg   rating                 -    -   0.7756  0.0555 0.5984 0.6735 0.0017 -0.0000 0.5878 1.8617  892034724518/59217f63/b2162da9
+7  sad_bottle_l2y9wyykl9_1                 hgb      rating               0.1   31   0.7760  0.0552 0.5973 0.6729 0.0027  0.0047 1.5375 2.3646  892034724518/59217f63/b2162da9
+8  sad_bottle_l2y9wyykl9_3                 hgb      rating_tc_opening    0.1   31   0.7760  0.0551 0.5977 0.6729 0.0027  0.0118 2.8102 4.8580  892034724518/59217f63/b2162da9
