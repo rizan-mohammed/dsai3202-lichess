@@ -31,12 +31,12 @@ def main():
         ("valid-three-rows", json.dumps(sample).encode(), 200, None),
         ("valid-one-row-no-id", json.dumps(one).encode(), 200, None),
         ("valid-with-warning", json.dumps(inconsistent).encode(), 200, None),
-        ("invalid-missing-field", (SERV / "bad-requests" / "missing-field.json").read_bytes(), 400, "missing_field"),
-        ("invalid-wrong-type", (SERV / "bad-requests" / "wrong-type.json").read_bytes(), 400, "invalid_value"),
-        ("invalid-out-of-range", (SERV / "bad-requests" / "out-of-range.json").read_bytes(), 400, "invalid_value"),
-        ("invalid-empty-body", b"", 400, "empty_body"),
-        ("invalid-not-json", (SERV / "bad-requests" / "not-json.json").read_bytes(), 400, "invalid_json"),
-        ("invalid-too-many-rows", json.dumps(big).encode(), 400, "too_many_rows"),
+        ("invalid-missing-field", (SERV / "bad-requests" / "missing-field.json").read_bytes(), 424, "missing_field"),
+        ("invalid-wrong-type", (SERV / "bad-requests" / "wrong-type.json").read_bytes(), 424, "invalid_value"),
+        ("invalid-out-of-range", (SERV / "bad-requests" / "out-of-range.json").read_bytes(), 424, "invalid_value"),
+        ("invalid-empty-body", b"", 424, "empty_body"),
+        ("invalid-not-json", (SERV / "bad-requests" / "not-json.json").read_bytes(), 424, "invalid_json"),
+        ("invalid-too-many-rows", json.dumps(big).encode(), 424, "too_many_rows"),
     ]
     rows, passed = [], 0
     for name, body, want_status, want_code in cases:
