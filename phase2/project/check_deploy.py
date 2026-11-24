@@ -28,7 +28,7 @@ def chk(n, c, fix):
 need = ["code_commit", "training_run", "holdout_run", "data_asset", "data_snapshot_sha256", "split_id", "features", "val_log_loss", "test_log_loss", "limitations"]
 chk(f"1 model lichess-outcome:{ver} registered with commit, run, data/feature versions, metrics, limitations", bool(m) and all(tags.get(k) for k in need), "az ml model create -f project/model-v<N>.yml")
 chk("2 endpoint exists and is Succeeded", bool(e) and e.get("provisioning_state") == "Succeeded", "bash scripts/deploy.sh")
-chk("3 deployment blue is Succeeded and serves the registered version", bool(d) and d.get("provisioning_state") == "Succeeded" and str(d.get("model", "")).endswith(f"lichess-outcome:{ver}"), "bash scripts/deploy.sh")
+chk("3 deployment blue is Succeeded and serves the registered version", bool(d) and d.get("provisioning_state") == "Succeeded" and (str(d.get("model", "")).endswith(f"lichess-outcome:{ver}") or str(d.get("model", "")).endswith(f"/models/lichess-outcome/versions/{ver}")), "bash scripts/deploy.sh")
 chk("4 blue takes 100% of the traffic", bool(e) and (e.get("traffic") or {}).get("blue") == 100, "az ml online-endpoint update -n $(cat .endpoint_name) --traffic blue=100")
 f = jf("functional_checks.json")
 chk("5 functional checks: valid and invalid inputs", bool(f) and f["passed"] == f["total"] and f["expected_model"] == f"lichess-outcome:{ver}", "python3 project/client_tests.py")

@@ -1,0 +1,38 @@
+== endpoint eplichess60306369   model lichess-outcome:1   2026-11-21T15:08:52Z
+Name             Version
+---------------  ---------
+lichess-outcome  1
+Name                   Version
+---------------------  ---------
+lichess-inference-env  1
+Name               State      Auth
+-----------------  ---------  ------
+eplichess60306369  Succeeded  key
+== az ml online-deployment create blue (this is the slow step)
+All traffic will be set to deployment blue once it has been provisioned.
+If you interrupt this command or it times out while waiting for the provisioning, you can try to set all the traffic to this deployment later once its has been provisioned.
+Instance type Standard_DS2_v2 may be too small for compute resources. Minimum recommended compute SKU is Standard_DS3_v2 for general purpose endpoints. Learn more about SKUs here: https://learn.microsoft.com/azure/machine-learning/referencemanaged-online-endpoints-vm-sku-list
+Check: endpoint eplichess60306369 exists
+Uploading serving (0.02 MBs):   0%|          | 0/16001 [00:00<?, ?it/s]Uploading serving (0.02 MBs):  61%|██████    | 9756/16001 [00:00<00:00, 58833.82it/s]Uploading serving (0.02 MBs): 100%|██████████| 16001/16001 [00:00<00:00, 85576.98it/s]
+
+
+........................................................................................................................................................Name    State      Model
+------  ---------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+blue    Succeeded  azureml:/subscriptions/0b475409-9d7c-4dff-a07b-084eff651874/resourceGroups/rg-dsai3202-rizan-60306369/providers/Microsoft.MachineLearningServices/workspaces/mlwdsai320260306369/models/lichess-outcome/versions/1
+== state
+State      Model                                                                                                                                                                                                               Instance_type    Count
+---------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  ---------------  -------
+Succeeded  azureml:/subscriptions/0b475409-9d7c-4dff-a07b-084eff651874/resourceGroups/rg-dsai3202-rizan-60306369/providers/Microsoft.MachineLearningServices/workspaces/mlwdsai320260306369/models/lichess-outcome/versions/1  Standard_DS2_v2  1
+{
+  "endpoint": "eplichess60306369",
+  "state": "Succeeded",
+  "traffic": {
+    "blue": 100
+  },
+  "uri": "https://eplichess60306369.qatarcentral.inference.ml.azure.com/score"
+}
+== one request
+"{\"n\": 3, \"ids\": [\"example-1\", \"example-2\", \"example-3\"], \"classes\": [\"white_win\", \"draw\", \"black_win\"], \"predictions\": [0, 2, 0], \"labels\": [\"white_win\", \"black_win\", \"white_win\"], \"probabilities\": [[0.559142, 0.034761, 0.406097], [0.318412, 0.023896, 0.657692], [0.636592, 0.067246, 0.296162]], \"warnings\": [], \"model\": \"lichess-outcome:1\"}"
+== the lines score.py wrote
+INFO:score:init: loaded lichess-outcome:1 from /var/azureml-app/azureml-models/lichess-outcome/1/model expects ['white_elo', 'black_elo', 'elo_diff', 'elo_mean', 'tc_base', 'tc_inc', 'speed_class', 'eco', 'eco_family', 'opening_family', 'w_clk_1', 'b_clk_1', 'w_used_10', 'b_used_10', 'used_diff_10', 'unequal_start']
+INFO:score:scored n=3 model=lichess-outcome:1 warnings=0

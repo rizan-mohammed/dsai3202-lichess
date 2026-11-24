@@ -1,0 +1,14 @@
+{
+  "rows": 200,
+  "from_partition": "deploy",
+  "selection": "smallest game-id hash",
+  "snapshot_sha256": "892034724518c119a67f044b53c8f1232e696c5c7c1fd21d6e25b6331de51b95",
+  "split_id": "9f2142551a36c29ba3ad76185e44aaf9ca14bcb38efcac5d87d222957951b3b7",
+  "first_ids": [
+    "5dbGnlZI",
+    "4QaVn3i0",
+    "H69Esys7",
+    "6y54egsX",
+    "9QQacq2a"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+ "http_status": 200,
+ "seconds": 0.078,
+ "response": {
+  "n": 3,
+  "ids": [
+   "example-1",
+   "example-2",
+   "example-3"
+  ],
+  "classes": [
+   "white_win",
+   "draw",
+   "black_win"
+  ],
+  "predictions": [
+   0,
+   2,
+   0
+  ],
+  "labels": [
+   "white_win",
+   "black_win",
+   "white_win"
+  ],
+  "probabilities": [
+   [
+    0.559142,
+    0.034761,
+    0.406097
+   ],
+   [
+    0.318412,
+    0.023896,
+    0.657692
+   ],
+   [
+    0.636592,
+    0.067246,
+    0.296162
+   ]
+  ],
+  "warnings": [],
+  "model": "lichess-outcome:1"
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "http_status": 424,
+ "seconds": 0.0226,
+ "response": {
+  "error": "row 0 white_elo: must be a number, got 'quite high'",
+  "code": "invalid_value",
+  "expected_fields": [
+   "white_elo",
+   "black_elo",
+   "elo_diff",
+   "elo_mean",
+   "tc_base",
+   "tc_inc",
+   "speed_class",
+   "eco",
+   "eco_family",
+   "opening_family",
+   "w_clk_1",
+   "b_clk_1",
+   "w_used_10",
+   "b_used_10",
+   "used_diff_10",
+   "unequal_start"
+  ],
+  "model": "lichess-outcome:1"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "http_status": 200,
+ "seconds": 0.0369,
+ "response": {
+  "n": 1,
+  "ids": [
+   "example-1"
+  ],
+  "classes": [
+   "white_win",
+   "draw",
+   "black_win"
+  ],
+  "predictions": [
+   0
+  ],
+  "labels": [
+   "white_win"
+  ],
+  "probabilities": [
+   [
+    0.937939,
+    0.012346,
+    0.049715
+   ]
+  ],
+  "warnings": [
+   {
+    "row": 0,
+    "field": "elo_diff",
+    "message": "differs from white_elo - black_elo"
+   }
+  ],
+  "model": "lichess-outcome:1"
+ }
+}

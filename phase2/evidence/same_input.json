@@ -1,0 +1,13 @@
+{
+ "result": "SAME",
+ "rows_sent": 200,
+ "matched_by_id": 200,
+ "max_abs_probability_difference": 4.990864891155078e-07,
+ "tolerance": 1e-05,
+ "labels_equal": 200,
+ "endpoint_model": "lichess-outcome:1",
+ "expected_model": "lichess-outcome:1",
+ "endpoint": "eplichess60306369",
+ "request_seconds": 0.08,
+ "inputs_file": "fixed_inputs.json"
+}

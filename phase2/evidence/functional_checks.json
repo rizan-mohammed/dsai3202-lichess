@@ -1,0 +1,71 @@
+{
+ "endpoint": "eplichess60306369",
+ "expected_model": "lichess-outcome:1",
+ "passed": 9,
+ "total": 9,
+ "cases": [
+  {
+   "case": "valid-three-rows",
+   "expected_http": 200,
+   "got_http": 200,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "valid-one-row-no-id",
+   "expected_http": 200,
+   "got_http": 200,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "valid-with-warning",
+   "expected_http": 200,
+   "got_http": 200,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-missing-field",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-wrong-type",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-out-of-range",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-empty-body",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-not-json",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  },
+  {
+   "case": "invalid-too-many-rows",
+   "expected_http": 424,
+   "got_http": 424,
+   "model": "lichess-outcome:1",
+   "passed": true
+  }
+ ]
+}

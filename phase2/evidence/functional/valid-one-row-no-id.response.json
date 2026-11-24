@@ -1,0 +1,30 @@
+{
+ "http_status": 200,
+ "seconds": 0.0529,
+ "response": {
+  "n": 1,
+  "ids": [
+   0
+  ],
+  "classes": [
+   "white_win",
+   "draw",
+   "black_win"
+  ],
+  "predictions": [
+   0
+  ],
+  "labels": [
+   "white_win"
+  ],
+  "probabilities": [
+   [
+    0.559142,
+    0.034761,
+    0.406097
+   ]
+  ],
+  "warnings": [],
+  "model": "lichess-outcome:1"
+ }
+}

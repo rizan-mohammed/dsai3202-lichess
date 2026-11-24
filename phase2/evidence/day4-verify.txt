@@ -1,0 +1,8 @@
+PASS  1 model lichess-outcome:1 registered with commit, run, data/feature versions, metrics, limitations
+PASS  2 endpoint exists and is Succeeded
+PASS  3 deployment blue is Succeeded and serves the registered version
+PASS  4 blue takes 100% of the traffic
+PASS  5 functional checks: valid and invalid inputs
+PASS  6 same-input check: deployed answers as the saved model
+PASS  7 client latency measured against the stated target
+7/7 checks passed

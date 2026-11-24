@@ -1,0 +1,31 @@
+{
+ "endpoint": "eplichess60306369",
+ "model": "lichess-outcome:1",
+ "client": "VM in the same region (see README)",
+ "single_record": {
+  "requests": 200,
+  "p50_ms": 36.837715000046956,
+  "p95_ms": 44.868862000157606,
+  "p99_ms": 87.31361100012691,
+  "max_ms": 685.0817100000768,
+  "target_p95_ms": 500,
+  "target_met": true
+ },
+ "batch_100_records": {
+  "requests": 30,
+  "p50_ms": 40.9499649999816,
+  "p95_ms": 50.587327000130244,
+  "records_per_second": 2343.705205932573,
+  "target_p95_ms": 1000,
+  "target_met": true
+ },
+ "warmup_ms": [
+  85.5,
+  47.7,
+  116.3,
+  54.3,
+  49.6
+ ],
+ "failed_requests": 0,
+ "passed": true
+}
