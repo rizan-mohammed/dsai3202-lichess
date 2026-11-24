@@ -38,16 +38,17 @@ Derived fields that disagree with their parts (e.g. `elo_diff` != `white_elo - b
 `model` names the exact registered model version that answered.
 
 ## Errors (the request is rejected as a whole; no partial answers)
-| HTTP | `code` | When |
+| HTTP (as seen by the client) | `code` | When |
 |---|---|---|
-| 400 | empty_body | no body |
-| 400 | invalid_json | body is not JSON |
-| 400 | bad_shape | not an object with a non-empty list `data` of objects |
-| 400 | too_many_rows | more than 1000 records |
-| 400 | missing_field | a record lacks one of the 16 fields (the message names it) |
-| 400 | invalid_value | wrong type, null, or outside the allowed range (the message names row and field) |
+| 424 | empty_body | no body |
+| 424 | invalid_json | body is not JSON |
+| 424 | bad_shape | not an object with a non-empty list `data` of objects |
+| 424 | too_many_rows | more than 1000 records |
+| 424 | missing_field | a record lacks one of the 16 fields (the message names it) |
+| 424 | invalid_value | wrong type, null, or outside the allowed range (the message names row and field) |
 | 401 | - | missing or wrong key (answered by Azure before the script runs) |
-| 500 | internal_error | the model failed on valid input (should not happen; traceback in the deployment log) |
+| 424 (500 from the container) | internal_error | the model failed on valid input (should not happen; traceback in the deployment log) |
+`score.py` itself answers these with HTTP 400. The Azure managed online endpoint wraps any 4xx/5xx returned by the scoring container into HTTP 424 ("model error") and passes our JSON body through unchanged, so a client sees 424 plus the `code` in the table; the `code` is what to branch on, not the status.
 Every error body is JSON: `{"error": "...", "code": "...", "expected_fields": [...], "model": "..."}`.
 
 ## Computing the fields from a raw game
