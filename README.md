@@ -302,6 +302,10 @@ Model `lichess-outcome` **version 1** (type `mlflow_model`), registered from the
 Tags (see screenshot `phase2/evidence/screenshots/model-tags.png`): `code_commit` `603d5002e8eab7195e69b08f6b0ca4e5d97add11`, `training_run`, `holdout_run`, `data_asset` `lichess-features:1`, `data_snapshot_sha256`, `split_id`, `split_method`, `features`, `excluded_columns`, `hyperparameters`, `libs`, `training_rows`, `val_log_loss` 0.76324, `test_log_loss` 0.76381, `test_log_loss_baseline` 0.77705, `test_ci95` [0.01297, 0.01349], `limitations`, `input_contract`, `deploy_from_ts` 1496016000 (2017-05-29 00:00 UTC).
 The preprocessing is part of the model (one sklearn Pipeline), so the endpoint cannot drift from training. Data asset `lichess-features:1` points to the retained snapshot, so the exact training data is recoverable.
 
+### Demo page (optional)
+
+`phase2/demo_app.py` is a small web page for demonstrating the endpoint without the Azure portal. It is not part of the graded serving path. It runs on the project VM, holds the endpoint key on the server side (read from the `ENDPOINT_KEY` environment variable, never stored in the repository), and forwards requests to `eplichess60306369`. The page shows the three outcome probabilities and predicted label for each game, and has buttons for a random valid game, the sample request, and an invalid request (a missing field) that shows the endpoint's JSON error code. To run it: `export ENDPOINT_KEY=$(az ml online-endpoint get-credentials -n eplichess60306369 -g rg-dsai3202-rizan-60306369 -w mlwdsai320260306369 --query primaryKey -o tsv)` then `python3 demo_app.py serving/sample-request.json`, and open `http://<VM-IP>:8080` (requires an inbound NSG rule for TCP 8080, removed after the demo). The page was drafted with Claude, and I ran and tested it against the live endpoint.
+
 ### Deployed service
 | Item | Value |
 |---|---|
